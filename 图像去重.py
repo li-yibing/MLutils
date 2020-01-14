@@ -1,4 +1,9 @@
 import hashlib
+import os
+import cv2
+import numpy as np
+
+
 def remove_same_piture_by_get_md5(path):
     img_list = os.listdir(path)
     print(img_list)
@@ -91,3 +96,11 @@ def remove_simillar_image_by_ssim(path):
                     break
             if flag:
                 save_list.append(img_list[i])
+
+
+if __name__ == "__main__":
+
+    img_path = '/home/ybli/ybli/nuaa/dataset/datasettrain/fake'
+    #remove_same_piture_by_get_md5(img_path)
+    remove_simillar_picture_by_perception_hash(img_path)
+    #remove_simillar_image_by_ssim(img_path)
