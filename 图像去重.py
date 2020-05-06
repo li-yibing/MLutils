@@ -1,4 +1,10 @@
 import hashlib
+import os
+import cv2
+import numpy as np
+from skimage.measure import compare_ssim
+
+
 def remove_same_piture_by_get_md5(path):
     img_list = os.listdir(path)
     print(img_list)
@@ -59,11 +65,12 @@ def remove_simillar_image_by_ssim(path):
         try:
             img = cv2.imread(os.path.join(path, img_list[i]))
             img = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-            img = cv2.resize(img,(256, 256))
-            count_num+=1
+            img = cv2.resize(img, (256, 256))
+            count_num += 1
+            print(count_num)
         except:
             continue
-        if count_num==1:
+        if count_num == 1:
             save_list.append(img_list[i])
             continue
         elif len(save_list) <5:
@@ -72,7 +79,7 @@ def remove_simillar_image_by_ssim(path):
                 com_img = cv2.imread(os.path.join(path,save_list[j]))
                 com_img = cv2.cvtColor(com_img,cv2.COLOR_BGR2GRAY)
                 com_img = cv2.resize(com_img,(256,256))
-                sim = compare_ssim(img,com_img)
+                sim = compare_ssim(img, com_img)
                 if sim > 0.4:
                     os.remove(os.path.join(path,img_list[i]))
                     flag = False
@@ -84,10 +91,18 @@ def remove_simillar_image_by_ssim(path):
                 com_img = cv2.imread(os.path.join(path,save_img))
                 com_img = cv2.cvtColor(com_img, cv2.COLOR_BGR2GRAY)
                 com_img = cv2.resize(com_img, (256, 256))
-                sim = compare_ssim(img,com_img)
+                sim = compare_ssim(img, com_img)
                 if sim > 0.4:
-                    os.remove(os.path.join(path,img_list[i]))
+                    os.remove(os.path.join(path, img_list[i]))
                     flag = False
                     break
             if flag:
                 save_list.append(img_list[i])
+
+
+if __name__ == "__main__":
+
+    img_path = '/home/ybli/ybli/nuaa/dataset/test/real/'
+    #remove_same_piture_by_get_md5(img_path)
+    #remove_simillar_picture_by_perception_hash(img_path)
+    remove_simillar_image_by_ssim(img_path)
