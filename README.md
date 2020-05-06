@@ -23,3 +23,34 @@ nuaa数据分割
 
 编辑VOC标签
 
+标签转换
+
+
+
+[目标检测汇总](https://handong1587.github.io/deep_learning/2015/10/09/object-detection.html#papers)
+
+
+
+**目标检测算法：**
+
+### [Detectron](https://github.com/facebookresearch/Detectron)
+
+### [Detectron2](https://github.com/facebookresearch/Detectron2)
+
+### [darknet ](https://github.com/AlexeyAB/darknet)
+
+### [Yet-Another-*EfficientDet*-Pytorch](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch)
+
+### [simpledet](https://github.com/TuSimple/simpledet)
+
+
+
+**文本检测算法：**
+
+### [PSENet](https://github.com/whai362/PSENet)
+
+
+
+人脸识别算法：
+
+### [SeetaFace2](https://github.com/seetafaceengine/SeetaFace2)
