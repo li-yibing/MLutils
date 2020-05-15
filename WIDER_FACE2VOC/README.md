@@ -61,3 +61,9 @@ python generate.py -i WIDER_train_annotations/ -o train.txt
 python generate.py -i WIDER_val_annotations/ -o val.txt
 ```
 
+
+
+应用实例：
+
+1.[mmdetection](https://github.com/open-mmlab/mmdetection)中人脸检测的训练[README.md](https://github.com/open-mmlab/mmdetection/blob/v1.2.0/configs/wider_face/README.md)
+
