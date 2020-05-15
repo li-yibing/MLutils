@@ -11,6 +11,8 @@
 
 批量重命名
 
+图像去重
+
 
 
 
@@ -23,7 +25,11 @@ nuaa数据分割
 
 编辑VOC标签
 
-标签转换
+标签转换：
+
+​	1.WIDER_FACE-->VOC
+
+​	2.WIDER_FACE-->COCO
 
 
 
@@ -42,6 +48,8 @@ nuaa数据分割
 ### [Yet-Another-*EfficientDet*-Pytorch](https://github.com/zylo117/Yet-Another-EfficientDet-Pytorch)
 
 ### [simpledet](https://github.com/TuSimple/simpledet)
+
+### [mmdetection](https://github.com/open-mmlab/mmdetection)
 
 
 
